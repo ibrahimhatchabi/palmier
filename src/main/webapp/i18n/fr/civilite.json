@@ -1,0 +1,23 @@
+{
+  "palmierDevApp": {
+    "civilite": {
+      "home": {
+        "title": "Civilites",
+        "createLabel": "Créer un nouveau Civilite",
+        "createOrEditLabel": "Créer ou éditer un Civilite",
+        "notFound": "Aucun Civilite trouvé"
+      },
+      "created": "Un nouveau Civilite a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Civilite avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Civilite avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Civilite {{ id }} ?"
+      },
+      "detail": {
+        "title": "Civilite"
+      },
+      "code": "Code",
+      "libelle": "Libelle"
+    }
+  }
+}

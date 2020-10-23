@@ -180,3 +180,195 @@ ui bootstrap tweaks
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+// Custom global
+
+.mini-card {
+  width: 40%;
+}
+
+.medium-card {
+  width: 80%;
+  height: 90vh;
+  overflow: scroll;
+  margin-top: 0;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+body {
+  background: url('../../content/images/bg-image.jpg') no-repeat center / cover;
+}
+
+.page-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.page-heading {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-logo {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+}
+
+.logo-commande {
+  background: url('../../content/images/order-hover.svg') no-repeat center / cover;
+}
+
+.logo-serveur-male {
+  background: url('../../content/images/waiter-hover.svg') no-repeat center / cover;
+  margin-right: 0;
+}
+
+.logo-serveur-female {
+  background: url('../../content/images/waitress-hover.svg') no-repeat center / cover;
+  margin-left: -10px;
+}
+
+.logo-plat {
+  background: url('../../content/images/dish-hover.svg') no-repeat center / cover;
+}
+
+.logo-boisson {
+  background: url('../../content/images/coffee-hover.svg') no-repeat center / cover;
+}
+
+.add-form {
+  height: 80vh;
+  overflow: scroll;
+}
+
+.add-form-left {
+  background-color: #3e8acc;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-commande {
+  width: 180px;
+  height: 180px;
+  background: url('../../content/images/order-hover.svg') no-repeat center / cover;
+}
+
+.add-serveur-male {
+  width: 120px;
+  height: 180px;
+  background: url('../../content/images/waiter-hover.svg') no-repeat center / cover;
+}
+
+.add-serveur-female {
+  width: 120px;
+  height: 180px;
+  background: url('../../content/images/waitress-hover.svg') no-repeat center / cover;
+}
+
+.add-plat {
+  width: 180px;
+  height: 180px;
+  background: url('../../content/images/dish-hover.svg') no-repeat center / cover;
+}
+
+.add-boisson {
+  width: 180px;
+  height: 180px;
+  background: url('../../content/images/coffee-hover.svg') no-repeat center / cover;
+}
+
+.btn-custom {
+  border-radius: 5px;
+  border: solid 2px darkgray;
+  background-color: transparent;
+  // width: 100px;
+  height: 32px;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+.btn-custom-md {
+  // width: 180px;
+  font-size: 16px;
+  height: 50px;
+}
+
+.btn-custom:hover {
+  color: white;
+  border: solid 2px transparent;
+}
+
+.btn-delete:hover {
+  background-color: firebrick;
+}
+
+.btn-details:hover {
+  background-color: teal;
+}
+
+.btn-edit:hover {
+  background-color: #3e8acc;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-logo {
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+.edit-logo {
+  background: url('../../content/images/edit.svg') center no-repeat / cover;
+}
+
+.delete-logo {
+  background: url('../../content/images/delete.svg') center no-repeat / cover;
+}
+
+.details-logo {
+  background: url('../../content/images/details.svg') center no-repeat / cover;
+}
+
+.add-logo {
+  background: url('../../content/images/add.svg') center no-repeat / cover;
+  width: 20px;
+  height: 20px;
+}
+
+.btn-custom:hover .edit-logo {
+  background: url('../../content/images/edit-hover.svg') center no-repeat / cover;
+}
+
+.btn-custom:hover .delete-logo {
+  background: url('../../content/images/delete-hover.svg') center no-repeat / cover;
+}
+
+.btn-custom:hover .details-logo {
+  background: url('../../content/images/details-hover.svg') center no-repeat / cover;
+}
+
+.btn-custom:hover .add-logo {
+  background: url('../../content/images/add-hover.svg') center no-repeat / cover;
+}
+
+.btn-custom:focus {
+  outline: none !important;
+}

@@ -4,9 +4,9 @@ Main page styles
 
 .hipster {
   display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_1.svg') no-repeat center top;
+  width: 79vh;
+  height: 79vh;
+  background: url('../../content/images/sunset.svg') no-repeat center top;
   background-size: contain;
 }
 
@@ -17,7 +17,279 @@ Main page styles
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .hipster {
-    background: url('../../content/images/jhipster_family_member_1.svg') no-repeat center top;
+    background: url('../../content/images/sunset.svg') no-repeat center top;
     background-size: contain;
   }
+}
+
+.left-box {
+  max-width: 83vh;
+  height: 79vh;
+}
+
+.right-box {
+  max-width: 60vh;
+  height: 79vh;
+  flex: 1 0 33.3333333333%;
+  padding-left: 5px;
+}
+
+.lead {
+  font-style: italic;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.form {
+  position: relative;
+}
+
+.btn.btn-primary {
+  position: absolute;
+  right: 0;
+}
+
+.forspace {
+  height: 120px;
+}
+
+.home-menu-container {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-container {
+  width: 60%;
+  height: 50%;
+  position: relative;
+}
+
+.menu-item {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  padding: 5px;
+}
+
+.menu-item .item-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: solid 2px darkgray;
+}
+
+.menu-item.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.menu-item.top-right {
+  top: 0;
+  right: 0;
+}
+
+.menu-item.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.menu-item.top-left {
+  top: 0;
+  left: 0;
+}
+
+.menu-item:hover {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.menu-item:active {
+  width: 96%;
+  height: 96%;
+}
+
+.menu-item.bottom-right:hover {
+  bottom: -30%;
+  right: -30%;
+}
+
+.menu-item.top-right:hover {
+  top: -30%;
+  right: -30%;
+}
+
+.menu-item.bottom-left:hover {
+  bottom: -30%;
+  left: -30%;
+}
+
+.menu-item.top-left:hover {
+  top: -30%;
+  left: -30%;
+}
+
+.menu-item.bottom-right:active {
+  bottom: -28%;
+  right: -28%;
+}
+
+.menu-item.top-right:active {
+  top: -28%;
+  right: -28%;
+}
+
+.menu-item.bottom-left:active {
+  bottom: -28%;
+  left: -28%;
+}
+
+.menu-item.top-left:active {
+  top: -28%;
+  left: -28%;
+}
+
+.item-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item.order-item {
+  width: 50%;
+  height: 52%;
+  background: url('../../content/images/order.svg') white no-repeat center center / contain;
+}
+
+.item-container:hover .item.order-item {
+  background: url('../../content/images/order-hover.svg') white no-repeat center center / contain;
+}
+
+.item.server-item-male {
+  width: 50%;
+  height: 65%;
+  background: url('../../content/images/waiter.svg') white no-repeat center center / contain;
+}
+
+.item.server-item-female {
+  margin-left: -10px;
+  width: 50%;
+  height: 65%;
+  background: url('../../content/images/waitress.svg') white no-repeat center center / contain;
+}
+
+.item-container:hover .item.server-item-male {
+  background: url('../../content/images/waiter-hover.svg') white no-repeat center center / contain;
+}
+
+.item-container:hover .item.server-item-female {
+  background: url('../../content/images/waitress-hover.svg') white no-repeat center center / contain;
+}
+
+.item.plat-item {
+  width: 50%;
+  height: 50%;
+  background: url('../../content/images/dish.svg') white no-repeat center center / contain;
+}
+
+.item-container:hover .item.plat-item {
+  background: url('../../content/images/dish-hover.svg') white no-repeat center center / contain;
+}
+
+.item.boisson-item {
+  width: 50%;
+  height: 50%;
+  background: url('../../content/images/coffee.svg') white no-repeat center center / contain;
+}
+
+.item-container:hover .item.boisson-item {
+  background: url('../../content/images/coffee-hover.svg') white no-repeat center center / contain;
+}
+
+.menu-item .item-container:hover {
+  border-color: #000;
+  position: relative;
+}
+
+.menu-item .item-container:after {
+  width: 200%;
+  height: 50px;
+  position: absolute;
+  line-height: 50px;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.menu-item .item-container.order-item:after {
+  bottom: -95%;
+  left: -17%;
+  text-align: center;
+}
+
+.menu-item .item-container.server-item:after {
+  bottom: -95%;
+  left: -80%;
+  text-align: center;
+}
+
+.menu-item .item-container.plat-item:after {
+  bottom: -35%;
+  left: -17%;
+  text-align: center;
+}
+
+.menu-item .item-container.boisson-item:after {
+  bottom: -35%;
+  left: -75%;
+  text-align: center;
+}
+
+.menu-item:active .item-container.order-item:after {
+  bottom: -101.5%;
+  left: -15.5%;
+  text-align: center;
+}
+
+.menu-item:active .item-container.server-item:after {
+  bottom: -101.5%;
+  left: -81.2%;
+  text-align: center;
+}
+
+.menu-item:active .item-container.plat-item:after {
+  bottom: -38.5%;
+  left: -15.5%;
+  text-align: center;
+}
+
+.menu-item:active .item-container.boisson-item:after {
+  bottom: -38.6%;
+  left: -76%;
+  text-align: center;
+}
+
+.menu-item .item-container:hover:after {
+  content: attr(title-custom);
+}
+
+.home-title {
+  //color: rgb(92.941176%,35.294118%,17.647059%);
+  //color: rgb(70.980392%,22.745098%,14.117647%);
+  //color: rgb(98.039216%,70.196078%,28.627451%);
+  //color: rgb(98.039216%,70.196078%,28.627451%);
+  font-family: Cursive;
+  color: rgb(37.254902%, 14.509804%, 13.72549%);
+  font-style: italic;
+  text-align: center;
 }

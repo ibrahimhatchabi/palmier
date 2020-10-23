@@ -37,6 +37,10 @@ Logo styles
   width: 45px;
   display: inline-block;
   vertical-align: middle;
-  background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
+  background: url('../../../content/images/date-palm.svg') no-repeat center center;
   background-size: contain;
+}
+
+.detached-navbar .navbar-nav .nav-link {
+  color: #000;
 }

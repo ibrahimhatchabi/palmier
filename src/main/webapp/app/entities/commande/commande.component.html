@@ -1,0 +1,90 @@
+<div>
+    <div class="page-heading" id="page-heading">
+        <div class="page-title-container">
+            <div class="page-logo logo-commande"></div>
+            <span jhiTranslate="palmierDevApp.commande.home.title">Commandes</span>
+        </div>
+        <button id="jh-create-entity" class="btn btn-custom btn-custom-md btn-edit float-right jh-create-entity create-commande" [routerLink]="['/commande/new']">
+            <div class="button-content">
+                <div class="button-logo add-logo"></div>
+                <span  jhiTranslate="palmierDevApp.commande.home.createLabel">
+                    New order
+                </span>
+            </div>
+        </button>
+    </div>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="commandes?.length === 0">
+        <span jhiTranslate="palmierDevApp.commande.home.notFound">No commandes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="commandes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+<!--            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+            <th scope="col"  jhiSortBy="numero"><span jhiTranslate="palmierDevApp.commande.numero">Numero</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="date"><span jhiTranslate="palmierDevApp.commande.date">Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="status"><span jhiTranslate="palmierDevApp.commande.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th scope="col"  jhiSortBy="serveurId"><span jhiTranslate="palmierDevApp.commande.serveur">Serveur</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let commande of commandes ;trackBy: trackId">
+<!--                <td><a [routerLink]="['/commande', commande.id, 'view' ]">{{commande.id}}</a></td>-->
+                <td>{{commande.numero}}</td>
+                <td>{{commande.date | date:'medium'}}</td>
+                <td>{{commande.status}}</td>
+                <!--<td>
+                    <div *ngIf="commande.serveurId">
+                        <a [routerLink]="['/serveur', commande.serveurId , 'view' ]" >{{commande.serveurName}}</a>
+                    </div>
+                </td>-->
+                <td class="text-right">
+                    <div class="">
+                        <button type="submit"
+                                [routerLink]="['/commande', commande.id, 'view' ]"
+                                class="btn btn-custom btn-details btn-sm">
+<!--                            <fa-icon [icon]="'eye'"></fa-icon>-->
+                            <div class="button-content">
+                                <div class="button-logo details-logo"></div>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </div>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/commande', commande.id, 'edit']"
+                                class="btn btn-custom btn-edit btn-sm">
+<!--                            <fa-icon [icon]="'pencil-alt'"></fa-icon>-->
+                            <div class="button-content">
+                                <div class="button-logo edit-logo"></div>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </div>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/commande', { outlets: { popup: commande.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-custom btn-delete btn-sm">
+<!--                            <fa-icon [icon]="'times'"></fa-icon>-->
+                            <div class="button-content">
+                                <div class="button-logo delete-logo"></div>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </div>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="commandes?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

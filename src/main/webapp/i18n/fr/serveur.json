@@ -1,0 +1,25 @@
+{
+  "palmierDevApp": {
+    "serveur": {
+      "home": {
+        "title": "Liste des serveurs",
+        "createLabel": "Nouveau serveur",
+        "createOrEditLabel": "Créer ou éditer un serveur",
+        "notFound": "Aucun serveur trouvé"
+      },
+      "created": "Un nouveau serveur a été créé avec le numéro {{ param }}",
+      "updated": "Le serveur avec le numéro {{ param }} a été mis à jour",
+      "deleted": "Le serveur avec le numéro {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le serveur {{ id }} ?"
+      },
+      "detail": {
+        "title": "Serveur"
+      },
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "telephone": "Téléphone",
+      "civilite": "Civilité"
+    }
+  }
+}

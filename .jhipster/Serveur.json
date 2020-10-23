@@ -1,0 +1,36 @@
+{
+    "name": "Serveur",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "civilite",
+            "otherEntityRelationshipName": "serveur",
+            "relationshipName": "civilite",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191209104810",
+    "entityTableName": "serveur",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

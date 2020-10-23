@@ -42,6 +42,17 @@ public class CacheConfiguration {
             createCache(cm, ne.digitalita.palmier.domain.User.class.getName());
             createCache(cm, ne.digitalita.palmier.domain.Authority.class.getName());
             createCache(cm, ne.digitalita.palmier.domain.User.class.getName() + ".authorities");
+            createCache(cm, ne.digitalita.palmier.domain.Serveur.class.getName());
+            createCache(cm, ne.digitalita.palmier.domain.Plat.class.getName());
+            createCache(cm, ne.digitalita.palmier.domain.Plat.class.getName() + ".commandes");
+            createCache(cm, ne.digitalita.palmier.domain.Boisson.class.getName());
+            createCache(cm, ne.digitalita.palmier.domain.Boisson.class.getName() + ".commandes");
+            createCache(cm, ne.digitalita.palmier.domain.Commande.class.getName());
+            createCache(cm, ne.digitalita.palmier.domain.Commande.class.getName() + ".plats");
+            createCache(cm, ne.digitalita.palmier.domain.Commande.class.getName() + ".boissons");
+            createCache(cm, ne.digitalita.palmier.domain.TypePlat.class.getName());
+            createCache(cm, ne.digitalita.palmier.domain.TypeBoisson.class.getName());
+            createCache(cm, ne.digitalita.palmier.domain.Civilite.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

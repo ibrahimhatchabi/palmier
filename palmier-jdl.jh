@@ -1,0 +1,67 @@
+entity Serveur {
+	nom String,
+    prenom String,
+    telephone String
+}
+
+entity Plat {
+	libelle String,
+    code Integer
+}
+
+entity Boisson {
+	libelle String,
+    code String
+}
+
+entity Commande {
+	numero Integer,
+    date ZonedDateTime,
+    status String
+}
+
+entity TypePlat{
+	code Integer,
+    libelle String
+}
+
+entity TypeBoisson{
+	code Integer,
+    libelle String
+}
+
+entity Civilite{
+	code Integer,
+    libelle String
+}
+
+relationship ManyToOne {
+	Plat{type} to TypePlat
+}
+
+relationship ManyToOne {
+	Boisson{type} to TypeBoisson
+}
+
+relationship ManyToOne {
+	Serveur{civilite} to Civilite
+}
+
+relationship ManyToOne {
+	Commande{serveur} to Serveur
+}
+
+relationship ManyToMany {
+	Commande to Plat 
+}
+
+relationship ManyToMany {
+	Commande to Boisson
+}
+
+service * with serviceClass
+paginate * with pagination
+dto * with mapstruct
+filter *
+
+

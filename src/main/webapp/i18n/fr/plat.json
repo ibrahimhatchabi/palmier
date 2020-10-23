@@ -1,0 +1,25 @@
+{
+  "palmierDevApp": {
+    "plat": {
+      "home": {
+        "title": "Liste des plats",
+        "createLabel": "Nouveau plat",
+        "createOrEditLabel": "Créer ou éditer un plat",
+        "notFound": "Aucun plat trouvé"
+      },
+      "created": "Un nouveau plat a été créé avec le numéro {{ param }}",
+      "updated": "Le plat avec le numéro {{ param }} a été mis à jour",
+      "deleted": "Le plat avec le numéro {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le plat numéro {{ id }} ?"
+      },
+      "detail": {
+        "title": "Plat"
+      },
+      "libelle": "Libellé",
+      "code": "Code",
+      "type": "Type",
+      "commande": "Commande"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "palmierDevApp": {
+    "boisson": {
+      "home": {
+        "title": "Liste des boissons",
+        "createLabel": "Nouvelle boisson",
+        "createOrEditLabel": "Créer ou éditer une boisson",
+        "notFound": "Aucune boisson trouvée"
+      },
+      "created": "Une nouvelle boisson a été créée avec le numéro {{ param }}",
+      "updated": "Le boisson avec le numéro {{ param }} a été mise à jour",
+      "deleted": "Le boisson avec le numéro {{ param }} a été supprimée",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer la boisson numéro {{ id }} ?"
+      },
+      "detail": {
+        "title": "Boisson"
+      },
+      "libelle": "Libelle",
+      "code": "Code",
+      "type": "Type",
+      "commande": "Commande"
+    }
+  }
+}

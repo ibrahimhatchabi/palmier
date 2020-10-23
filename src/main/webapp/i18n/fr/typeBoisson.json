@@ -1,0 +1,23 @@
+{
+  "palmierDevApp": {
+    "typeBoisson": {
+      "home": {
+        "title": "TypeBoissons",
+        "createLabel": "Créer un nouveau Type Boisson",
+        "createOrEditLabel": "Créer ou éditer un Type Boisson",
+        "notFound": "Aucun Type Boisson trouvé"
+      },
+      "created": "Un nouveau Type Boisson a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type Boisson avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type Boisson avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Type Boisson {{ id }} ?"
+      },
+      "detail": {
+        "title": "Type Boisson"
+      },
+      "code": "Code",
+      "libelle": "Libelle"
+    }
+  }
+}

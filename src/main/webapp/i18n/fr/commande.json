@@ -1,0 +1,27 @@
+{
+  "palmierDevApp": {
+    "commande": {
+      "home": {
+        "title": "Liste des commandes",
+        "createLabel": "Nouvelle commande",
+        "createOrEditLabel": "Créer ou éditer une commande",
+        "notFound": "Aucune commande trouvée"
+      },
+      "created": "Une nouvelle commande a été créée avec le numéro {{ param }}",
+      "updated": "La commande avec numéro {{ param }} a été mise à jour",
+      "deleted": "Le Commande avec numéro {{ param }} a été supprimée",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le commande numéro {{ id }} ?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "numero": "Numero",
+      "date": "Date",
+      "status": "Status",
+      "serveur": "Serveur",
+      "plat": "Plat",
+      "boisson": "Boisson"
+    }
+  }
+}

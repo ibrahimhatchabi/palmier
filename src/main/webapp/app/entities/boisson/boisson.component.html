@@ -1,0 +1,88 @@
+<div>
+    <div class="page-heading" id="page-heading">
+        <div class="page-title-container">
+            <div class="page-logo logo-boisson"></div>
+            <span jhiTranslate="palmierDevApp.boisson.home.title">Boissons</span>
+        </div>
+        <button id="jh-create-entity" class="btn btn-custom btn-custom-md btn-edit float-right jh-create-entity create-commande" [routerLink]="['/boisson/new']">
+            <div class="button-content">
+                <div class="button-logo add-logo"></div>
+                <span  jhiTranslate="palmierDevApp.boisson.home.createLabel">
+                    Create a new Boisson
+                </span>
+            </div>
+        </button>
+    </div>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="boissons?.length === 0">
+        <span jhiTranslate="palmierDevApp.boisson.home.notFound">No boissons found</span>
+    </div>
+    <div class="table-responsive" *ngIf="boissons?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+<!--            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
+            <th scope="col"  jhiSortBy="code"><span jhiTranslate="palmierDevApp.boisson.code">Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="libelle"><span jhiTranslate="palmierDevApp.boisson.libelle">Libelle</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="typeId"><span jhiTranslate="palmierDevApp.boisson.type">Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let boisson of boissons ;trackBy: trackId">
+<!--                <td><a [routerLink]="['/boisson', boisson.id, 'view' ]">{{boisson.id}}</a></td>-->
+                <td>{{boisson.code}}</td>
+                <td>{{boisson.libelle}}</td>
+                <td>
+                    <div *ngIf="boisson.typeId">
+                        <a [routerLink]="['/type-boisson', boisson.typeId , 'view' ]" >{{boisson.typeName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="">
+                        <button type="submit"
+                                [routerLink]="['/boisson', boisson.id, 'view' ]"
+                                class="btn btn-custom btn-details btn-sm">
+                            <!--                            <fa-icon [icon]="'eye'"></fa-icon>-->
+                            <div class="button-content">
+                                <div class="button-logo details-logo"></div>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </div>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/boisson', boisson.id, 'edit' ]"
+                                class="btn btn-custom btn-edit btn-sm">
+                            <!--                            <fa-icon [icon]="'pencil-alt'"></fa-icon>-->
+                            <div class="button-content">
+                                <div class="button-logo edit-logo"></div>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </div>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/boisson', { outlets: { popup: boisson.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-custom btn-delete btn-sm">
+                            <!--                            <fa-icon [icon]="'times'"></fa-icon>-->
+                            <div class="button-content">
+                                <div class="button-logo delete-logo"></div>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </div>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="boissons?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

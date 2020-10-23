@@ -1,0 +1,47 @@
+<div class="row add-form">
+    <div class="col-4">
+        <div class="add-form-left">
+            <div class="add-serveur-male"></div>
+            <div class="add-serveur-female"></div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div *ngIf="serveur">
+            <h2><span jhiTranslate="palmierDevApp.serveur.detail.title">Serveur</span> {{serveur.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="palmierDevApp.serveur.civilite">Civilite</span></dt>
+                <dd>
+                    <div *ngIf="serveur.civiliteId">
+                        {{serveur.civiliteName}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.serveur.nom">Nom</span></dt>
+                <dd>
+                    <span>{{serveur.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.serveur.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{serveur.prenom}}</span>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.serveur.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{serveur.telephone}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/serveur', serveur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

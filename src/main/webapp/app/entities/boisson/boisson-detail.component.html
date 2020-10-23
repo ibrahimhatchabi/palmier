@@ -1,0 +1,42 @@
+<div class="row add-form">
+    <div class="col-4">
+        <div class="add-form-left">
+            <div class="add-boisson"></div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div *ngIf="boisson">
+            <h2><span jhiTranslate="palmierDevApp.boisson.detail.title">Boisson</span> {{boisson.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="palmierDevApp.boisson.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{boisson.libelle}}</span>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.boisson.code">Code</span></dt>
+                <dd>
+                    <span>{{boisson.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.boisson.type">Type</span></dt>
+                <dd>
+                    <div *ngIf="boisson.typeId">
+                        <a [routerLink]="['/type-boisson', boisson.typeId, 'view']">{{boisson.typeName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/boisson', boisson.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="row add-form">
+    <div class="col-4">
+        <div class="add-form-left">
+            <div class="add-plat"></div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div *ngIf="plat">
+            <h2><span jhiTranslate="palmierDevApp.plat.detail.title">Plat</span> {{plat.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="palmierDevApp.plat.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{plat.libelle}}</span>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.plat.code">Code</span></dt>
+                <dd>
+                    <span>{{plat.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.plat.type">Type</span></dt>
+                <dd>
+                    <div *ngIf="plat.typeId">
+                        <a [routerLink]="['/type-plat', plat.typeId, 'view']">{{plat.typeName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plat', plat.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

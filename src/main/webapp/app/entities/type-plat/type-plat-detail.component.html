@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="typePlat">
+            <h2><span jhiTranslate="palmierDevApp.typePlat.detail.title">Type Plat</span> {{typePlat.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="palmierDevApp.typePlat.code">Code</span></dt>
+                <dd>
+                    <span>{{typePlat.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="palmierDevApp.typePlat.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{typePlat.libelle}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/type-plat', typePlat.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
